@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-import "../../styles/App.css";
+import "../../styles/Auth.css";
 
 class SignUp extends React.Component {
   state = {

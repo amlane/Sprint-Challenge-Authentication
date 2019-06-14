@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, NavLink, withRouter } from "react-router-dom";
+import PrivateRoute from "./components/auth/PrivateRoute";
 
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
@@ -23,11 +24,13 @@ class App extends React.Component {
           <NavLink to="/signup">Sign Up</NavLink>{" "}
           <NavLink to="/signin">Sign In</NavLink>{" "}
           <NavLink to="/jokes">Jokes</NavLink>
-          <button onClick={this.logout}>Log Out</button>
+          {localStorage.getItem("token") ? (
+            <button onClick={this.logout}>Log Out</button>
+          ) : null}
         </nav>
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/jokes" component={Jokes} />
+        <PrivateRoute path="/jokes" component={Jokes} />
       </div>
     );
   }
