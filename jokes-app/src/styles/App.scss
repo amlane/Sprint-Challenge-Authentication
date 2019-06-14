@@ -18,6 +18,10 @@
     position: fixed;
     opacity: 0.8;
 
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+
     h1 {
       font-family: "Luckiest Guy", cursive;
       font-size: 55px;

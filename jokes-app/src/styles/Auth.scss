@@ -8,6 +8,11 @@
   background: white;
   margin-top: 50%;
 
+  @media (max-width: 600px) {
+    width: 300px;
+    height: 350px;
+  }
+
   h2 {
     margin: 15% 0 5% 0;
   }
