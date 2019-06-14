@@ -1,0 +1,21 @@
+.jokes-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .jokes {
+    background: cornflowerblue;
+    border-radius: 5px;
+    color: white;
+    height: auto;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 2%;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: lighter;
+    font-size: 18px;
+  }
+}

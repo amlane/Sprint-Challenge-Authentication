@@ -10,10 +10,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid;
+    border: 2px solid silver;
     width: 100%;
     padding: 2%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+    background: white;
+
+    h1 {
+      font-family: "Luckiest Guy", cursive;
+      font-size: 55px;
+      font-weight: lighter;
+      color: cornflowerblue;
+    }
 
     a {
       text-decoration: none;

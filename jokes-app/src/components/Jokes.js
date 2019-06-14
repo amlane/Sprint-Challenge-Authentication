@@ -1,7 +1,7 @@
 import React from "react";
 import { axiosWithAuth } from "./auth/axiosWithAuth";
 
-import "../styles/App.scss";
+import "../styles/Jokes.scss";
 
 class Jokes extends React.Component {
   state = {
@@ -28,7 +28,7 @@ class Jokes extends React.Component {
         <div className="jokes-cta">
           {this.state.jokes.map(joke => {
             return (
-              <p className="users" key={joke.id}>
+              <p className="jokes" key={joke.id}>
                 {joke.joke}
               </p>
             );
