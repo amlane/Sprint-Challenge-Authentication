@@ -7,7 +7,8 @@ import "../../styles/Auth.scss";
 class SignIn extends React.Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    errorMsg: ""
   };
 
   handleInput = e => {
@@ -24,10 +25,16 @@ class SignIn extends React.Component {
       .then(res => {
         // console.log(res);
         localStorage.setItem("token", res.data.token);
+        this.setState({
+          errorMsg: ""
+        });
         this.props.history.push("/jokes");
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response.data);
+        this.setState({
+          errorMsg: err.response.data.message
+        });
       });
   };
 
@@ -36,7 +43,6 @@ class SignIn extends React.Component {
       <header className="App-header">
         <form onSubmit={this.handleSubmit} className="login-form">
           <h2>Log In</h2>
-
           <label>username</label>
           <input
             value={this.state.username}
@@ -45,7 +51,6 @@ class SignIn extends React.Component {
             name="username"
             onChange={this.handleInput}
           />
-
           <label>password</label>
           <input
             value={this.state.password}
@@ -54,8 +59,10 @@ class SignIn extends React.Component {
             name="password"
             onChange={this.handleInput}
           />
-
           <button type="submit">Sign In</button>
+          {this.state.errorMsg === "" ? null : (
+            <p className="error-msg">{this.state.errorMsg}</p>
+          )}
           <p className="new-user-signup">
             Not a User? <NavLink to="/signup">Sign Up</NavLink>
           </p>
