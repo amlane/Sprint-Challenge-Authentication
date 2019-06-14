@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-import "../../styles/Auth.css";
+import "../../styles/Auth.scss";
 
 class SignIn extends React.Component {
   state = {
-    username: "amanda",
-    password: "123"
+    username: "",
+    password: ""
   };
 
   handleInput = e => {

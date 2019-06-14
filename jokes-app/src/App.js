@@ -6,7 +6,7 @@ import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import Jokes from "./components/Jokes";
 
-import "./styles/App.css";
+import "./styles/App.scss";
 
 class App extends React.Component {
   logout = e => {
@@ -21,12 +21,14 @@ class App extends React.Component {
       <div className="App">
         <nav>
           <h1>Dad Jokes</h1>
-          <NavLink to="/signup">Sign Up</NavLink>{" "}
-          <NavLink to="/signin">Sign In</NavLink>{" "}
-          <NavLink to="/jokes">Jokes</NavLink>
-          {localStorage.getItem("token") ? (
-            <button onClick={this.logout}>Log Out</button>
-          ) : null}
+          <div>
+            <NavLink to="/signup">Sign Up</NavLink>{" "}
+            <NavLink to="/signin">Sign In</NavLink>{" "}
+            <NavLink to="/jokes">Jokes</NavLink>
+            {localStorage.getItem("token") ? (
+              <button onClick={this.logout}>Log Out</button>
+            ) : null}
+          </div>
         </nav>
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />

@@ -1,7 +1,7 @@
 import React from "react";
 import { axiosWithAuth } from "./auth/axiosWithAuth";
 
-import "../styles/App.css";
+import "../styles/App.scss";
 
 class Jokes extends React.Component {
   state = {

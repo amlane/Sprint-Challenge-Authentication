@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-import "../../styles/Auth.css";
+import "../../styles/Auth.scss";
 
 class SignUp extends React.Component {
   state = {
@@ -35,7 +35,7 @@ class SignUp extends React.Component {
     return (
       <header className="App-header">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <h2>Log In</h2>
+          <h2>Sign Up</h2>
 
           <label>username</label>
           <input
